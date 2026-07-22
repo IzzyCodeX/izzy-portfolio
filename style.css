@@ -22,7 +22,7 @@ body {
   color: var(--text);
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background-image: ;
+  background-image: url('./IMG-20250910-WA0161.jpg');
 }
 
 nav {
@@ -32,9 +32,19 @@ nav {
   padding: 1.2rem 2rem;
   position: sticky;
   top: 0;
-  background-color: var(--bg);
-  border-bottom: 1px solid var(--border);
-  z-index: 100;
+  background-color: #121214;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:1.2rem 2rem;
+
+  position:fixed;
+  width:100%;
+
+  background:transparent;
+
+  z-index:100;
 }
 
 .logo {
@@ -234,64 +244,78 @@ section:not(#hero) {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:3rem;
+  gap: 6rem;
 }
 
 .abt-sect{
-  flex:2;
-
-  background:var(--bg-secondary);
-
-  border:1px solid var(--border);
-
-  border-radius:16px;
-
-  padding:2rem;
+  flex:1;
 }
 
 .abt-me{
-  color:var(--accent);
+  color: var(--text);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
 
-  margin-bottom:1.5rem;
+.about-label {
+  color: var(--accent);
+  font-family: monospace;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
 
-  font-size:2rem;
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.about-tags span {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-family: monospace;
 }
 
 .para{
-  color:var(--text-muted);
-
-  margin-bottom:1rem;
-
-  line-height:1.9;
-
-  font-size:1rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  line-height: 1.9;
+  font-size: 0.95rem;
 }
 
 .pic{
-  flex:1;
-
   display:flex;
-
   justify-content:center;
+  flex-shrink: 0;
 }
 
 .pic img{
-  width:300px;
-
-  height:300px;
-
-  object-fit:cover;
-
-  border-radius:20px;
-
-  border:2px solid var(--accent);
-
-  box-shadow:
-  0 0 25px rgba(0,255,136,.15);
-
   transition:.3s;
+  width: 280px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  box-shadow:
+  0 0 30px rgba(0, 255, 136, 0.2),
+  0 0 60px rgba(0, 255, 136, 0.08);
+  transition: .3s;
 }
 
 .pic img:hover{
   transform:translateY(-5px);
+  box-shadow:
+  0 0 40px rgba(0, 255, 136, 0.3),
+  0 0 80px rgba(0, 255, 136, 0.1);
 }
+
+
+
+
+
