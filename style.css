@@ -280,58 +280,62 @@ body.dark-mode .project-tags span {
 }
 
 /* --- MOBILE RESPONSIVENESS --- */
+/* --- MOBILE RESPONSIVENESS (Clean & Simple) --- */
 @media (max-width: 768px) {
     header {
+        flex-direction: column;
         padding: 15px 20px;
-        flex-wrap: wrap; 
-        position: sticky;
-        top: 0;
-        z-index: 1000;
+        gap: 15px;
     }
 
     nav {
-        display: none !important; 
-        position: fixed !important;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100vh;
-        background-color: var(--bg-color);
-        border-left: 1px solid var(--accent-color);
-        padding-top: 80px;
-        z-index: 9999;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
+        margin: 0;
     }
 
-    nav.active {
-        display: block !important; 
-        transform: translateX(0);
+    nav ul {
+        gap: 20px;
     }
 
     #theme-toggle {
-        margin-left: auto;
-        margin-right: 15px;
-        background: none;
-        border: none;
-        font-size: 1.3rem;
-        color: var(--heading-color);
-        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 20px;
     }
 
-    .menu-toggle {
-        display: block;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        color: var(--heading-color);
-        cursor: pointer;
+    #hero {
+        padding: 60px 20px;
     }
 
-    #hero h1 { font-size: 2.5rem; }
-    #hero { padding: 60px 20px; }
-    .hero-actions { flex-direction: column; }
-    .hero-actions a { text-align: center; }
-    #explore, #projects { padding: 60px 20px; }
-    .projects-grid, .explore-grid { grid-template-columns: 1fr; }
+    #hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .hero-actions a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    #explore, #projects {
+        padding: 50px 20px;
+    }
+
+    .explore-grid, .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .explore-card, .project-card {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        border-bottom: 1px solid var(--accent-color);
+        padding-bottom: 20px;
+        border-radius: 0;
+    }
 }
