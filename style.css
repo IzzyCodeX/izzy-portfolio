@@ -26,6 +26,12 @@ header {
     align-items: center;
     padding: 20px 40px;
     border-bottom: 1px solid var(--accent-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .logo {
@@ -188,6 +194,10 @@ body.dark-mode #theme-toggle {
     filter: sepia(1) hue-rotate(170deg) saturate(3) brightness(1.5); 
 }
 
+body.dark-mode header {
+    background-color: rgba(32, 42, 50, 0.7);
+}
+
 body.dark-mode .btn-primary {
     background-color: var(--heading-color);
     color: #202A32;
@@ -259,40 +269,75 @@ body.dark-mode .project-tags span {
     color: var(--heading-color);
 }
 
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--heading-color);
+    cursor: pointer;
+}
+
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+   .menu-toggle {
+        display: block;
+        margin-left: 0;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: var(--heading-color);
+        cursor: pointer;
+    }
+
+    #theme-toggle {
+        margin-left: auto;
+        margin-right: 15px;
+        background: none;
+        border: none;
+        font-size: 1.3rem;
+        color: var(--heading-color);
+        cursor: pointer;
     }
 
     nav {
-        margin-left: 0;
-        margin-right: 0;
+        position: fixed; 
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: var(--bg-color); 
+        border-left: 1px solid var(--accent-color);
+        padding-top: 80px;
+        transition: right 0.3s ease;
+        z-index: 100;
     }
 
-    #hero {
-        padding: 60px 20px;
+    body.dark-mode #theme-toggle {
+        filter: none;
     }
 
-    #hero h1 {
-        font-size: 2.5rem;
+    nav.active {
+        right: 0; 
     }
 
-    .hero-actions {
+    nav ul {
         flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
-    .hero-actions a {
-        text-align: center;
-    }
-
-    #explore, #projects {
-        padding: 60px 20px;
-    }
-    
-    .projects-grid, .explore-grid {
-        grid-template-columns: 1fr; 
-    }
+    #hero h1 { font-size: 2.5rem; }
+    #hero { padding: 60px 20px; }
+    .hero-actions { flex-direction: column; }
+    .hero-actions a { text-align: center; }
+    #explore, #projects { padding: 60px 20px; }
+    .projects-grid, .explore-grid { grid-template-columns: 1fr; }
 }
