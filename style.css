@@ -193,3 +193,68 @@ body.dark-mode .btn-primary {
     color: #202A32;
     border-color: var(--heading-color);
 }
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.project-tags span {
+    background-color: var(--accent-color);
+    color: var(--heading-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.project-card a {
+    color: var(--heading-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.project-card a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode .project-tags span {
+    background-color: #202A32;
+    color: var(--heading-color);
+}
