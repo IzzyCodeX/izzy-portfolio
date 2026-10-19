@@ -35,6 +35,12 @@ header {
     text-decoration: none;
 }
 
+nav {
+    margin-left: auto; 
+    margin-right: 30px;
+}
+
+
 nav ul {
     list-style: none;
     display: flex;
@@ -155,4 +161,35 @@ footer {
     border-top: 1px solid var(--accent-color);
     text-align: center;
     font-size: 0.9rem;
+}
+
+body.dark-mode {
+    --bg-color: #202A32;
+    --text-color: #FFFFFF;
+    --heading-color: #C4F8FF;
+    --accent-color: #0F4B70;
+    --card-bg: #0F4B70;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 30px;
+    filter: sepia(1) hue-rotate(170deg) saturate(3) brightness(0.8); 
+}
+
+body.dark-mode #explore {
+    background-color: #18222C;
+}
+
+body.dark-mode #theme-toggle {
+    filter: sepia(1) hue-rotate(170deg) saturate(3) brightness(1.5); 
+}
+
+body.dark-mode .btn-primary {
+    background-color: var(--heading-color);
+    color: #202A32;
+    border-color: var(--heading-color);
 }
